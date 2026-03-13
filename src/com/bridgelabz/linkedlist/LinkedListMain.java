@@ -5,13 +5,9 @@ public class LinkedListMain {
 
         LinkedList<Integer> list = new LinkedList<>();
 
-        Node<Integer> first = new Node<>(56);
-        Node<Integer> second = new Node<>(30);
-        Node<Integer> third = new Node<>(70);
-
-        list.head = first;
-        first.next = second;
-        second.next = third;
+        list.push(70);
+        list.push(30);
+        list.push(56);
 
         list.printList();
     }
