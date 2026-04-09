@@ -19,18 +19,43 @@ public class LinkedList<T> {
         temp.next = newNode;
     }
 
-    // UC5 Pop Method (Delete First Node)
+    // UC5 Pop (delete first)
     public T pop() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return null;
+        }
+
+        T data = head.data;
+        head = head.next;
+        return data;
+    }
+
+    // UC6 Pop Last (delete last)
+    public T popLast() {
 
         if (head == null) {
             System.out.println("List is empty");
             return null;
         }
 
-        T poppedData = head.data;
-        head = head.next;
+        // Only one node
+        if (head.next == null) {
+            T data = head.data;
+            head = null;
+            return data;
+        }
 
-        return poppedData;
+        // Traverse to second last node
+        Node<T> temp = head;
+        while (temp.next.next != null) {
+            temp = temp.next;
+        }
+
+        T data = temp.next.data; // last node data
+        temp.next = null;        // remove last node
+
+        return data;
     }
 
     public void printList() {

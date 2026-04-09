@@ -9,12 +9,12 @@ public class LinkedListMain {
         list.append(30);
         list.append(70);
 
-        System.out.println("Before pop:");
+        System.out.println("Before popLast:");
         list.printList();
 
-        list.pop();
+        list.popLast();
 
-        System.out.println("After pop:");
+        System.out.println("After popLast:");
         list.printList();
     }
 }
