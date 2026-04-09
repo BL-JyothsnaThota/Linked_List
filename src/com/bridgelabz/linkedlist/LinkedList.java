@@ -3,7 +3,6 @@ public class LinkedList<T> {
 
     Node<T> head;
 
-    // UC3 Append (reuse)
     public void append(T data) {
         Node<T> newNode = new Node<>(data);
 
@@ -20,25 +19,18 @@ public class LinkedList<T> {
         temp.next = newNode;
     }
 
-    // UC4 Insert After Given Value
-    public void insertAfter(T prevData, T newData) {
+    // UC5 Pop Method (Delete First Node)
+    public T pop() {
 
-        Node<T> temp = head;
-
-        // Search for node with prevData
-        while (temp != null && !temp.data.equals(prevData)) {
-            temp = temp.next;
+        if (head == null) {
+            System.out.println("List is empty");
+            return null;
         }
 
-        // If node found
-        if (temp != null) {
-            Node<T> newNode = new Node<>(newData);
+        T poppedData = head.data;
+        head = head.next;
 
-            newNode.next = temp.next;
-            temp.next = newNode;
-        } else {
-            System.out.println("Value " + prevData + " not found");
-        }
+        return poppedData;
     }
 
     public void printList() {
