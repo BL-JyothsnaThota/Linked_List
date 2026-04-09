@@ -9,9 +9,16 @@ public class LinkedListMain {
         list.append(30);
         list.append(70);
 
-        // Insert 40 after 30
         list.insertAfterNode(30, 40);
 
+        System.out.println("Before delete:");
         list.printList();
+
+        list.delete(40);
+
+        System.out.println("After delete:");
+        list.printList();
+
+        System.out.println("Size: " + list.size());
     }
 }
