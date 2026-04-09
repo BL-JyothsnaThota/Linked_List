@@ -9,12 +9,9 @@ public class LinkedListMain {
         list.append(30);
         list.append(70);
 
-        Node<Integer> result = list.search(30);
+        // Insert 40 after 30
+        list.insertAfterNode(30, 40);
 
-        if (result != null) {
-            System.out.println("Found: " + result.data);
-        } else {
-            System.out.println("Not Found");
-        }
+        list.printList();
     }
 }
